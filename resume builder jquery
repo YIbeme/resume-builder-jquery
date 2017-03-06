@@ -1,0 +1,339 @@
+
+
+/**var name = "Yves Ibeme";
+
+var formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = "Full Stack Web Developer";
+
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+$("#header").append(formattedName);
+**/
+
+
+
+//$("#main").append("firstname");
+
+//var firstname = "james";
+
+//var age = 32;
+
+
+
+//console.log(firstname);
+
+
+//var awesomeThoughts = "I am Yves and i am awesome";
+
+//var funThoughts =  awesomeThoughts.replace("awesome", "fun");
+
+//console.log(awesomeThoughts);
+
+//console.log(funThoughts);
+
+//$("#main").append(funThoughts);
+
+
+
+//object dot notation
+/**var bio = {};
+    bio.welcome = "Hello welcome to my resume";
+    bio.picture = "images/fry.jpg";
+
+
+
+$("#main").append(bio.picture);
+$("#main").append(bio.welcome);
+**/
+
+
+
+
+var bio = {
+    "name": "Yves Ibeme",
+    "role": "Front End Developer",
+    "contacts": [{
+        "mobile": "564553307",
+        "email": "rsfk@yahoo.com",
+        "location": "Canada",
+    }],
+    "welcomeMessage": "come home", "skills": ["SDLC", "jQuery", "Android SDK", "Java"],"bioPic": "images/fry.jpg"}
+
+
+//object literal notation
+var education = {
+    "schools": [
+    {
+        "name": "Nnnamdi Azikiwe University",
+        "cities": "Anambra",
+        "degree": "Bachelors",
+        "majors": ["Biochemistry"],
+        "graduation": "2012"
+    },
+    {
+        "name": "NOUN",
+        "cities": "Lagos",
+        "degree": "Post Graduate Diploma",
+        "majors": ["Information Technology", "Maths"],
+        "graduation": "2014"
+    },
+    {
+        "name": "Saint Mary's University",
+        "cities": "Halifax",
+        "degree": "Masters",
+        "majors": ["Technology", "Entrepreneurship and Innovation"],
+        "graduation": "2016"
+    }
+    ],
+
+        "online courses": [
+        {
+            "title": "bo bo",
+            "school": "sd fd",
+            "url": "http://www.udacity.com/course/ud804"
+        }
+    ]
+}
+
+
+
+var work =
+{
+    "jobs": [
+    {
+        "employer": "CIPM",
+        "title": "Business Analyst",
+        "dates": "September 2014 - June 2015",
+        "locations": "Lagos, Nigeria",
+        "description":"i9fjoewjfr ewrj0ef 0ewjf  ewjfoe wfj fjiwer hfiefuedfi dif e fiedjfoef edifkjewf <br> iewf weidjfodj foohfie fidf eifiedjfi dfihehf iofhurfif9w0e fhrigj9esug i erfir ef9 erfojseoifh r "
+    },
+
+    {
+        "employer": "Nigerian Navy Quorra",
+        "title": "Computer Systems Analyst",
+        "dates": "Jun 2012 - Aug 2013",
+        "locations": "Brookly, New York",
+        "description": "i9fjoewjfr ewrj0ef 0ewjf  ewjfoe wfj fjiwer hfiefuedfi dif e fiedjfoef edifkjewf <br> iewf weidjfodj foohfie fidf eifiedjfi dfihehf iofhurfif9w0e fhrigj9esug i erfir ef9 erfojseoifh r "
+    }
+    ]
+}
+
+
+
+var projects = {
+    "projects": [
+    {
+        "title": "sample project 1",
+        "dates": "2014 - 2018",
+        "description": "i9fjoewjfr ewrj0ef 0ewjf  ewjfoe wfj fjiwer hfiefuedfi dif e fiedjfoef edifkjewf iewf weidjfodj foohfie fidf eifiedjfi dfihehf iofhurfif9w0e fhrigj9esug i erfir ef9 erfojseoifh r "
+    },
+
+    {
+        "title": "sample project 1",
+        "dates": "2014 - 2015",
+        "description": "i9fjoewjfr ewrj0ef 0ewjf  ewjfoe wfj fjiwer hfiefuedfi dif e fiedjfoef edifkjewf iewf weidjfodj foohfie fidf eifiedjfi dfihehf iofhurfif9w0e fhrigj9esug i erfir ef9 erfojseoifh r "
+    }
+    ]
+}
+
+
+
+
+
+//var name = "Yves Ibeme";
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+
+//var role = "Full Stack Web Developer";
+
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+$("#header").prepend(formattedRole);
+
+$("#header").prepend(formattedName);
+
+
+var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
+
+$("#header").append(formattedPic);
+
+var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedMsg);
+
+
+
+
+for (contact in bio.contacts){
+//$("#header").append(HTMLcontactGeneric);
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[contact].mobile);
+
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts[contact].email);
+
+var formattedMobileEmail = formattedMobile + formattedEmail;
+
+$("#topContacts").append(formattedMobileEmail);
+}
+
+
+//using an if loop to get te skills array in bio object
+
+$("#header").append(HTMLskillsStart);
+
+if (bio.skills.length > 0) {
+
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkills);
+
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkills);
+
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkills);
+
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
+    $("#skills").append(formattedSkills);
+
+};
+
+//using a for in loop
+/**for (job in work.jobs){
+$("#workExperience").append(HTMLworkStart);
+
+var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+
+var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+
+var formatterEmployerTitle = formattedEmployer + formattedTitle;
+
+$(".work-entry:last").append(formatterEmployerTitle);
+
+var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+$(".work-entry:last").append(formattedDate);
+
+var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+$(".work-entry:last").append(formattedDescription);
+
+}**/
+
+
+//Use for-in to loop over objects like
+//countries = {'country1':'Argentina', 'country2':'China','country3':'England'};
+
+//Use forEach or for to iterate over arrays like:
+//countries = ['Argentina', 'China', 'England'];
+
+function displayWork () {
+        for (job in work.jobs){
+
+    $("#workExperience").append(HTMLworkStart);
+
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+
+    var formatterEmployerTitle = formattedEmployer + formattedTitle;
+
+    $(".work-entry:last").append(formatterEmployerTitle);
+
+    var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDate);
+
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
+
+    }
+}
+//displays the code for the work sectin inside the display work function
+displayWork();
+
+
+
+//fucntion enscapsulated within an object
+projects.display = function (){
+
+    for(project in projects.projects){
+
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
+
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
+
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedDescription);
+
+        //if(projects.projects[project].images.length > 0) {
+           // for (image in projects.projects[project].images){
+            //    var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+           //     $(".project-entry:last").append(formattedImage);
+
+          //  }
+        //}
+    }
+}
+
+projects.display();
+
+
+
+
+
+//gets the click location of my web page
+$(document).click(
+    //anonymous function
+    function(loc) {
+  // your code goes here
+  //pageX and pageY are used ot get click locations
+  //loc is the name of the function so i set loc.pageX to loc.x logged it
+   loc.x = loc.pageX;
+    loc.y = loc.pageY;
+    console.log(loc.x, loc.y);
+}
+
+);
+
+
+function locationizer(work_obj){
+
+    var locationArray = [];
+
+    for(job in work_obj.jobs){
+        //work_obj.jobs is the jobs array in the work object.
+        //[job] is the index in the job Array
+        //.locations is the loaction
+        var newLocation = work_obj.jobs[job].locations;
+        locationArray.push(newLocation);
+
+    }
+
+    return locationArray;
+}
+
+console.log(locationizer(work));
+
+
+
+
+function inName (name){
+    name = name.trim().split(" ");
+    console.log(name);
+
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+    return name[0] + " " + name[1];
+
+}
+
+$("#main").append(internationalizeButton);
+
+//show map need to get an API key
+$("#mapDiv").append(googleMap);
